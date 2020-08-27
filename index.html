@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<style>
+#word{
+display:flex; 
+position:fixed; 
+top:0; 
+left:0; 
+right:0; 
+bottom:0; 
+align-items: center; 
+text-align: center; 
+background: black;
+color: white; 
+font-size: 64px; 
+} 
+</style> 
+</head> 
+<body> 
+<div id=“word”></div> 
+<script> 
+const words = “Mariam is an Armenian girl”.split(“ “), wordElement = document.getElementById(“word”), currentWord = 0, wordsPerSecond = 400, showNextWord = () => {  wordElement.innerText = words[currentWord]; currentWord = (currentWord+1) % words.length };
+
+setInterval(() => showNextWord(), 1000/wordsPerSecond)
+</script> 
+</body>
+</html>
